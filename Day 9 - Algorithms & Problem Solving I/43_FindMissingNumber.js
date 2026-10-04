@@ -1,0 +1,19 @@
+/* Problem 43: Find Missing Number
+ Description: Given an array of n-1 integers from 1 to n with one number missing, write a function findMissing(arr, n) to find the missing number.
+ Example:
+ Input: [1,2,4,5], n=5  → Output: 3
+ Hint: Use the formula: expected sum = n*(n+1)/2, then subtract actual sum.
+*/
+
+function findMissing(arr, n) {
+    const expectedSum = (n * (n + 1)) / 2;
+
+    const actualSum = arr.reduce(
+        (sum, num) => sum + num,
+        0
+    );
+
+    return expectedSum - actualSum;
+}
+
+console.log(findMissing([1, 2, 4, 5], 5));
